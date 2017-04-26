@@ -19,7 +19,7 @@ namespace PatchingUI
 
         #region timerSrvcChk_Tick
 
-        protected void timerSrvcChk_Tick(object sender, EventArgs e)
+        /*protected void timerSrvcChk_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace PatchingUI
                 EventLog.WriteEntry("PP Service Error Message", ex.Message, EventLogEntryType.Error);
             }
         }
-
+        */
         #endregion
 
     }

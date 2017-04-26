@@ -24,7 +24,7 @@
                     ClientIDMode="Static" OnClick="btnImport_Click" runat="server" />
             </td>
             <td style="padding-top: 20px; padding-left: 20px; width: 270px;" align="right">
-                <asp:HyperLink ID="hlPlan" ClientIDMode="Static" runat="server" Target="_blank" NavigateUrl="http://sharepoint/sites/ST/Shared%20Documents/Forms/AllItems.aspx?RootFolder=/sites/ST/Shared%20Documents/Standard%20Practices/Automation%20Folder/Automation%20OnBoarding/PowerPatch%204.0/Documents/Input%20Excel%20Templates">Input Template </asp:HyperLink>
+                <asp:HyperLink ID="hlPlan" ClientIDMode="Static" runat="server" Target="_blank" NavigateUrl="https://automationtest.blob.core.windows.net/customscriptfiles/Plantemplateformat.xlsx">Input Template </asp:HyperLink>
             </td>
         </tr>
         <tr>

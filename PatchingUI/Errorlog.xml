@@ -2752,321 +2752,579 @@ Procedure or function 'GetGroupNameList_New' expects parameter '@PatchScenario',
     <url>http://localhost:63130/Reports.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:31:16 AM</datetime>
-    <filename>Plan.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetPlanControlsData</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetPlanControlsData() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 225</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:31:16 AM</datetime>
+    <datetime>4/26/2017 3:14:31 PM</datetime>
     <filename>Plan.aspx</filename>
     <classname>PatchingUI.Plan</classname>
     <methodname>LoadControls</methodname>
-    <errormethod>GetPlanControlsData</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetPlanControlsData
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetPlanControlsData() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 240
-   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 206</errordetails>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 208</errordetails>
     <IP>::1</IP>
     <url>http://localhost:46050/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:31:16 AM</datetime>
-    <filename>Plan.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>TryGetConnection</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:31:16 AM</datetime>
+    <datetime>4/26/2017 3:14:31 PM</datetime>
     <filename>Plan.aspx</filename>
     <classname>PatchingUI.Plan</classname>
     <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Plan.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 491</errordetails>
+    <errormethod>LoadGroupNames</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 491</errordetails>
     <IP>::1</IP>
     <url>http://localhost:46050/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:33:44 AM</datetime>
-    <filename>Execute.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Execute.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:33:44 AM</datetime>
-    <filename>Execute.aspx</filename>
-    <classname>PatchingUI.Execute</classname>
-    <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Execute.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Execute.aspx.cs:line 108</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Execute.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:33:44 AM</datetime>
-    <filename>Prep.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>TryGetConnection</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Prep.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:33:44 AM</datetime>
+    <datetime>4/26/2017 3:17:39 PM</datetime>
     <filename>Prep.aspx</filename>
     <classname>PatchingUI.Prep</classname>
     <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Prep.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Prep.aspx.cs:line 998</errordetails>
+    <errormethod>LoadGroupNames</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Prep.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Prep.aspx.cs:line 999</errordetails>
     <IP>::1</IP>
     <url>http://localhost:46050/Prep.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:39:41 AM</datetime>
-    <filename>Plan.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetPlanControlsData</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetPlanControlsData() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 225</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:39:41 AM</datetime>
+    <datetime>4/26/2017 4:37:26 PM</datetime>
     <filename>Plan.aspx</filename>
     <classname>PatchingUI.Plan</classname>
     <methodname>LoadControls</methodname>
-    <errormethod>GetPlanControlsData</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetPlanControlsData
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetPlanControlsData() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 240
-   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 206</errordetails>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:39:57 AM</datetime>
-    <filename>Plan.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
-    <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
-  </error>
-  <error>
-    <datetime>4/26/2017 12:39:57 AM</datetime>
+    <datetime>4/26/2017 4:39:01 PM</datetime>
     <filename>Plan.aspx</filename>
     <classname>PatchingUI.Plan</classname>
-    <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Plan.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 491</errordetails>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Plan.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:40:19 AM</datetime>
-    <filename>Prep.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
+    <datetime>4/26/2017 4:40:50 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Prep.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:40:19 AM</datetime>
-    <filename>Prep.aspx</filename>
-    <classname>PatchingUI.Prep</classname>
-    <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Prep.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Prep.aspx.cs:line 998</errordetails>
+    <datetime>4/26/2017 4:45:24 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Prep.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:44:04 AM</datetime>
-    <filename>Execute.aspx</filename>
-    <classname>PatchingUI.DataAccessLayer</classname>
-    <methodname>GetGroupNames</methodname>
-    <errormethod>.ctor</errormethod>
-    <message>A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal&amp; connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at PatchingUI.DataAccessLayer.OpenConn() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 19
-   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 297</errordetails>
+    <datetime>4/26/2017 4:51:22 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Execute.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
   <error>
-    <datetime>4/26/2017 12:44:04 AM</datetime>
-    <filename>Execute.aspx</filename>
-    <classname>PatchingUI.Execute</classname>
-    <methodname>LoadGroupNames</methodname>
-    <errormethod>GetGroupNames</errormethod>
-    <message>ErrorSource:
-.Net SqlClient Data Provider
-GetGroupNames
-ErrorMessage:
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)</message>
-    <errordetails>   at PatchingUI.DataAccessLayer.GetGroupNames(String strStartDate, String strEndDate, String strPatchScenario) in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\DataAccessLayer.cs:line 316
-   at PatchingUI.Execute.LoadGroupNames() in D:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Execute.aspx.cs:line 108</errordetails>
+    <datetime>4/26/2017 4:57:03 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
     <IP>::1</IP>
-    <url>http://localhost:46050/Execute.aspx</url>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 4:58:02 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:22:01 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:22:42 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>btnImport_Click</methodname>
+    <errormethod>WinIOError</errormethod>
+    <message>The network path was not found.
+</message>
+    <errordetails>   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at System.Web.UI.WebControls.FileUpload.SaveAs(String filename)
+   at PatchingUI.Plan.btnImport_Click(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 109</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:24:58 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>btnImport_Click</methodname>
+    <errormethod>WinIOError</errormethod>
+    <message>The network path was not found.
+</message>
+    <errordetails>   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at System.Web.UI.WebControls.FileUpload.SaveAs(String filename)
+   at PatchingUI.Plan.btnImport_Click(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 109</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:28:40 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:29:21 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:29:41 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>btnImport_Click</methodname>
+    <errormethod>WinIOError</errormethod>
+    <message>The network path was not found.
+</message>
+    <errordetails>   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at System.Web.UI.WebControls.FileUpload.SaveAs(String filename)
+   at PatchingUI.Plan.btnImport_Click(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 109</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 5:30:21 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 6:10:33 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 6:19:50 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 6:22:33 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 6:48:03 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:11:20 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:16:04 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:18:30 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>SetPatchingScheduledResults</methodname>
+    <errormethod>OnError</errormethod>
+    <message>Error converting data type nvarchar to date.</message>
+    <errordetails>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at PatchingUI.Plan.SetPatchingScheduledResults(DataTable dt, String strTypeofServerlist) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 188</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:25:44 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:25:44 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:30:29 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:35:25 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>SetPatchingScheduledResults</methodname>
+    <errormethod>OnError</errormethod>
+    <message>Error converting data type nvarchar to date.</message>
+    <errordetails>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at PatchingUI.Plan.SetPatchingScheduledResults(DataTable dt, String strTypeofServerlist) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 188</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:35:25 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:35:25 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:38:43 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:47:19 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>SetPatchingScheduledResults</methodname>
+    <errormethod>OnError</errormethod>
+    <message>Procedure or function 'usp_SetPlanSchedule' expects parameter '@ServerName', which was not supplied.</message>
+    <errordetails>   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at PatchingUI.Plan.SetPatchingScheduledResults(DataTable dt, String strTypeofServerlist) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 188</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:47:35 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>GetPatchingScheduledResults</methodname>
+    <errormethod>GetPropertyValue</errormethod>
+    <message>DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'ServerName'.</message>
+    <errordetails>   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at System.Web.UI.DataBinder.Eval(Object container, String expression)
+   at ASP.plan_aspx.__DataBinding__control100(Object sender, EventArgs e) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx:line 278
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBind()
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at System.Web.UI.DataSourceView.Select(DataSourceSelectArguments arguments, DataSourceViewSelectCallback callback)
+   at System.Web.UI.WebControls.DataBoundControl.PerformSelect()
+   at System.Web.UI.WebControls.BaseDataBoundControl.DataBind()
+   at System.Web.UI.WebControls.GridView.DataBind()
+   at PatchingUI.Plan.GetPatchingScheduledResults(String uniqueID) in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 296</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
+  </error>
+  <error>
+    <datetime>4/26/2017 7:47:41 PM</datetime>
+    <filename>Plan.aspx</filename>
+    <classname>PatchingUI.Plan</classname>
+    <methodname>LoadControls</methodname>
+    <errormethod>LoadControls</errormethod>
+    <message>Object reference not set to an instance of an object.</message>
+    <errordetails>   at PatchingUI.Plan.LoadControls() in d:\Personal\Projects\PowerPatchDocs\Power Patch UI Code\PowerPatch Code\PowerPatchUI\PatchingUI\Plan.aspx.cs:line 225</errordetails>
+    <IP>::1</IP>
+    <url>http://localhost:4571/Plan.aspx</url>
   </error>
 </errorlog>
