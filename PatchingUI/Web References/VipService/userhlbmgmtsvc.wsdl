@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            &lt;h2&gt;myVips is a tool to manage Virtual IPs (VIPs) on Hardware Load Balancing devices (HLB)&lt;/h2&gt; 
+            &lt;h3&gt;Security model&lt;/h3&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="RegisterUserSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="RegisterUserSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterUserSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveNotifications">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActiveNotificationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveNotificationsResult" type="tns:ArrayOfUserNotification" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserNotification" nillable="true" type="tns:UserNotification" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserNotification">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="NotificationId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ActualOn" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="ExpiresOn" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Severity" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Header" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityObject" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:StructuralObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StructuralObject" abstract="true" />
+      <s:complexType name="EntityKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EntitySetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityContainerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityKeyValues" type="tns:ArrayOfEntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EntityKeyMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllUserFilters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Group_UserNoteFilterList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filters" type="tns:ArrayOfGroupUserNoteFilter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGroupUserNoteFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupUserNoteFilter" nillable="true" type="tns:GroupUserNoteFilter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupUserNoteFilter">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="GroupUserNoteFilterId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="GroupId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GroupReference" type="tns:EntityReferenceOfGroup" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityReferenceOfGroup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityReference" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="EntityReference" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RelatedEnd">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="EntityKey" type="tns:EntityKey" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RelatedEnd" abstract="true" />
+      <s:complexType name="ArrayOfGroup_UserNoteFilterList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Group_UserNoteFilterList" type="tns:Group_UserNoteFilterList" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllUserFiltersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserFiltersResult" type="tns:ArrayOfGroup_UserNoteFilterList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupAlias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserFilterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUserFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserFilterId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFilterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PowerShellCheckModuleVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionToCheck" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageTo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PowerShellCheckModuleVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PowerShellCheckModuleVersionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVIPs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="U_VIP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MailAlias" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerGroupId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerGroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerGroupAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserNote" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddRemoveDisabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RenewId" nillable="true" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Expires" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LeaseType" type="tns:LifeCycleLeaseTypes" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastRenewed" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RenewCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LeaseState" type="tns:LifeCycleStates" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextActionDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LifeCycleLeaseTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="LC_YEAR" />
+          <s:enumeration value="LC_6MO" />
+          <s:enumeration value="LC_3MO" />
+          <s:enumeration value="LC_LTD" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="LifeCycleStates">
+        <s:restriction base="s:string">
+          <s:enumeration value="LC_OK" />
+          <s:enumeration value="LC_ENTERING" />
+          <s:enumeration value="LC_EXP_3W" />
+          <s:enumeration value="LC_EXP_2W" />
+          <s:enumeration value="LC_EXP_1W" />
+          <s:enumeration value="LC_GRACE" />
+          <s:enumeration value="LC_UNKNOWN" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfU_VIP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="U_VIP" nillable="true" type="tns:U_VIP" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVIPsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVIPsResult" type="tns:ArrayOfU_VIP" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVipDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNodeIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVipDescriptionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVipChangeLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="top_number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserActivity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserActivity" nillable="true" type="tns:UserActivity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserActivity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:EntityObject">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="UserActivityId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Requestor" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestorGroup" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Vip" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Node" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Port" nillable="true" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Command" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Arguments" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Stamp" type="s:dateTime" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetVipChangeLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVipChangeLogResult" type="tns:ArrayOfUserActivity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVIPStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VipStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Vip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStamp" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:VipType" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserNote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ports" type="tns:ArrayOfLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nodes" type="tns:ArrayOfNodeStruct" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:ObjectStateStruct" />
+          <s:element minOccurs="1" maxOccurs="1" name="Statistics" type="tns:ObjectStatisticsStruct" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddRemoveDisabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastOperation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="VipType">
+        <s:restriction base="s:string">
+          <s:enumeration value="VT_UNSUPPORTED" />
+          <s:enumeration value="VT_F5" />
+          <s:enumeration value="VT_A10" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNodeStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NodeStruct" nillable="true" type="tns:NodeStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NodeStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CachedOn" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="dip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserNote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NodePortStatus" type="tns:ArrayOfPortStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ports" type="tns:ArrayOfLong" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrphanedNode" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPortStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PortStatus" nillable="true" type="tns:PortStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PortStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStamp" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="port" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnabledState" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailStatus" type="tns:AvailabilityStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="Statistics" type="tns:ObjectStatisticsStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AvailabilityStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="NONE" />
+          <s:enumeration value="GREEN" />
+          <s:enumeration value="YELLOW" />
+          <s:enumeration value="RED" />
+          <s:enumeration value="BLUE" />
+          <s:enumeration value="GRAY" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ObjectStatisticsStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="baseline" type="tns:StatisticsBaselineTypes" />
+          <s:element minOccurs="1" maxOccurs="1" name="baseline_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="connections_current" type="s:unsignedLong" />
+          <s:element minOccurs="1" maxOccurs="1" name="connections_total" type="s:unsignedLong" />
+          <s:element minOccurs="1" maxOccurs="1" name="bytes_in" type="s:unsignedLong" />
+          <s:element minOccurs="1" maxOccurs="1" name="bytes_out" type="s:unsignedLong" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="StatisticsBaselineTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="SB_NONE" />
+          <s:enumeration value="SB_ACTUAL" />
+          <s:enumeration value="SB_FAILOVER" />
+          <s:enumeration value="SB_OVERFLOW" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ObjectStateStruct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HWAcceleration" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnabledState" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailStatus" nillable="true" type="tns:AvailabilityStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="LBMethod" nillable="true" type="tns:LBMethods" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LBMethods">
+        <s:restriction base="s:string">
+          <s:enumeration value="LB_METHOD_ROUND_ROBIN" />
+          <s:enumeration value="LB_METHOD_RATIO_MEMBER" />
+          <s:enumeration value="LB_METHOD_LEAST_CONNECTION_MEMBER" />
+          <s:enumeration value="LB_METHOD_OBSERVED_MEMBER" />
+          <s:enumeration value="LB_METHOD_PREDICTIVE_MEMBER" />
+          <s:enumeration value="LB_METHOD_RATIO_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_LEAST_CONNECTION_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_FASTEST_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_OBSERVED_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_PREDICTIVE_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_DYNAMIC_RATIO" />
+          <s:enumeration value="LB_METHOD_FASTEST_APP_RESPONSE" />
+          <s:enumeration value="LB_METHOD_LEAST_SESSIONS" />
+          <s:enumeration value="LB_METHOD_DYNAMIC_RATIO_MEMBER" />
+          <s:enumeration value="LB_METHOD_L3_ADDR" />
+          <s:enumeration value="LB_METHOD_UNKNOWN" />
+          <s:enumeration value="LB_METHOD_WEIGHTED_LEAST_CONNECTION_MEMBER" />
+          <s:enumeration value="LB_METHOD_WEIGHTED_LEAST_CONNECTION_NODE_ADDRESS" />
+          <s:enumeration value="LB_METHOD_AMBIGUOUS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetVIPStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVIPStatusResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableVIPNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNodeIP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="port" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableVIPNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableVIPNodeResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableVIPNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNodeIP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="port" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableVIPNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableVIPNodeResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNodeIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddNodeResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNodeIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveNodeResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableVIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableVIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableVIPResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableVIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableVIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableVIPResult" type="tns:VipStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidVip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidVipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidVipResult" type="tns:VipValidness" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="VipValidness">
+        <s:restriction base="s:string">
+          <s:enumeration value="VipCanBeAdded" />
+          <s:enumeration value="VipNotServed" />
+          <s:enumeration value="VipDuplicate" />
+          <s:enumeration value="VipNotValid" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="IsValidSecurityGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupNTFormat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidSecurityGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidSecurityGroupResult" type="tns:GroupValidness" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="GroupValidness">
+        <s:restriction base="s:string">
+          <s:enumeration value="SecurityAndMail" />
+          <s:enumeration value="SecurityOnly" />
+          <s:enumeration value="MailOK" />
+          <s:enumeration value="NotValid" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="IsValidMailAlias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMailAlias" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidMailAliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidMailAliasResult" type="tns:GroupValidness" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitVipRegistrationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strVip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOwnerMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBusinessGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strVipDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLeaseType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitVipRegistrationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitVipRegistrationRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lifecycle_RenewLease">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRenewId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lifecycle_RenewLeaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Lifecycle_RenewLeaseResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lifecycle_TerminateLease">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRenewId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lifecycle_TerminateLeaseResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegisterUserSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUserSession" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveNotificationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveNotifications" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveNotificationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserFiltersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserFilters" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserFiltersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserFilter" />
+  </wsdl:message>
+  <wsdl:message name="AddUserFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUserFilter" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="PowerShellCheckModuleVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:PowerShellCheckModuleVersion" />
+  </wsdl:message>
+  <wsdl:message name="PowerShellCheckModuleVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:PowerShellCheckModuleVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVIPsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVIPs" />
+  </wsdl:message>
+  <wsdl:message name="GetVIPsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVIPsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetVipDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetVipDescription" />
+  </wsdl:message>
+  <wsdl:message name="SetVipDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetVipDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVipChangeLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVipChangeLog" />
+  </wsdl:message>
+  <wsdl:message name="GetVipChangeLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVipChangeLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVIPStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVIPStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetVIPStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVIPStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableVIPNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableVIPNode" />
+  </wsdl:message>
+  <wsdl:message name="EnableVIPNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableVIPNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableVIPNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableVIPNode" />
+  </wsdl:message>
+  <wsdl:message name="DisableVIPNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableVIPNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNode" />
+  </wsdl:message>
+  <wsdl:message name="AddNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveNode" />
+  </wsdl:message>
+  <wsdl:message name="RemoveNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableVIPSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableVIP" />
+  </wsdl:message>
+  <wsdl:message name="EnableVIPSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableVIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableVIPSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableVIP" />
+  </wsdl:message>
+  <wsdl:message name="DisableVIPSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableVIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidVipSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidVip" />
+  </wsdl:message>
+  <wsdl:message name="IsValidVipSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidVipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSecurityGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidSecurityGroup" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSecurityGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidSecurityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidMailAliasSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidMailAlias" />
+  </wsdl:message>
+  <wsdl:message name="IsValidMailAliasSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidMailAliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitVipRegistrationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitVipRegistrationRequest" />
+  </wsdl:message>
+  <wsdl:message name="SubmitVipRegistrationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitVipRegistrationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lifecycle_RenewLeaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Lifecycle_RenewLease" />
+  </wsdl:message>
+  <wsdl:message name="Lifecycle_RenewLeaseSoapOut">
+    <wsdl:part name="parameters" element="tns:Lifecycle_RenewLeaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lifecycle_TerminateLeaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Lifecycle_TerminateLease" />
+  </wsdl:message>
+  <wsdl:message name="Lifecycle_TerminateLeaseSoapOut">
+    <wsdl:part name="parameters" element="tns:Lifecycle_TerminateLeaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserHLBMgmtSvcSoap">
+    <wsdl:operation name="RegisterUserSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Used to create a security token associated with user, based on user's logon identity.
+                Security token is encoded to be html-safe.
+                Security token can be used when direct user impersonation is impossible or difficult, in every 
+                web service call. 
+                Security tokens will expire within the user's inactivity of UserSessionExpirationTime setting 
+                in web.config (defaults 30 minutes)
+        </wsdl:documentation>
+      <wsdl:input message="tns:RegisterUserSessionSoapIn" />
+      <wsdl:output message="tns:RegisterUserSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveNotifications">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Gets active UserNotifications. Used in web frontend to notify users about new features, upcoming tool maintenance windows etc.
+            Does not require authentication.
+        </wsdl:documentation>
+      <wsdl:input message="tns:GetActiveNotificationsSoapIn" />
+      <wsdl:output message="tns:GetActiveNotificationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserFilters">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Gets all filters for the current user. Used in myVips UI.&lt;br /&gt;
+            Exceptions: &lt;br /&gt;
+            ACCESS_DENIED -- in case user is not authorized for any of filters or authentication fails. &lt;br /&gt;
+            INTERNAL_ERROR -- in case of database problems
+        </wsdl:documentation>
+      <wsdl:input message="tns:GetAllUserFiltersSoapIn" />
+      <wsdl:output message="tns:GetAllUserFiltersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserFilter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Adds user filters to the specified group (only if requestor is a part of this group). Used in myVips UI.&lt;br /&gt;
+            Exceptions: &lt;br /&gt;
+            ACCESS_DENIED -- in case user is not authorized to add filter to requested group. &lt;br /&gt;
+            GROUP_NOT_FOUND -- in case requested group not found in tool's database.&lt;br /&gt;
+            DUPLICATE_FILTER -- in case filter with such description or definition already exists for requested group (filters with same description or definition could exist for different groups). &lt;br /&gt;
+            INTERNAL_ERROR -- in case of database problems
+        </wsdl:documentation>
+      <wsdl:input message="tns:AddUserFilterSoapIn" />
+      <wsdl:output message="tns:AddUserFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFilter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Removes the specified filter for the current user. Used in myVips UI.&lt;br /&gt;
+            Exceptions: &lt;br /&gt;
+            ACCESS_DENIED -- in case user is not authorized for any of filters or authentication fails. &lt;br /&gt;
+            FILTER_NOT_FOUND -- in case specified filter not found in tool's database. &lt;br /&gt;
+            INTERNAL_ERROR -- in case of database problems
+        </wsdl:documentation>
+      <wsdl:input message="tns:RemoveUserFilterSoapIn" />
+      <wsdl:output message="tns:RemoveUserFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PowerShellCheckModuleVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Is used to check the compatibility of PowerShell module with the current version of the engine. &lt;br /&gt;
+            PowerShell module passes its version (in format of N.M), and CheckPowerShellModuleVersion returns &lt;br /&gt;
+            &lt;0, "&gt; in case when myVipsShell version in current&lt;br /&gt;
+            &lt;1, [new version URL]&gt; in case when myVipsShell version in not current but still supported&lt;br /&gt;
+            &lt;2, [new version URL]&gt; in case when myVipsShell version is not supported&lt;br /&gt;
+            &lt;br /&gt;In case of wrong format of the string the WRONG_USERDATA exception is sent. &lt;br /&gt;
+        </wsdl:documentation>
+      <wsdl:input message="tns:PowerShellCheckModuleVersionSoapIn" />
+      <wsdl:output message="tns:PowerShellCheckModuleVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Returns VIPs that user can manage.&lt;br /&gt;
+            Throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- server error when Kerberos authentication failed&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:GetVIPsSoapIn" />
+      <wsdl:output message="tns:GetVIPsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVipDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Sets UserNote for the (VIP, Node) pair. UserNotes are used instead of DNS name resolution
+            for both VIPs and Nodes, because DNS resolution relies on reverse DNS record, which is often
+            not set for the property. If case when UserNote has to be set for VIP, the strNode has to be empty.
+            UserNotes are not deleted from database per design, so even when VIP or Node is deleted 
+            and then added back, the UserNote still appears. 
+            UserNotes are available through GetVIPs and GetVIPStatus responses.
+            Throws exceptions:
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SetVipDescriptionSoapIn" />
+      <wsdl:output message="tns:SetVipDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVipChangeLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Returns up to 100 latest activity records for given VIP. Requires authorization for this VIP. &lt;br /&gt;
+            If top_number is less than 1 or more than 100, up to 100 latest records returned. &lt;br /&gt;
+            If FromDate is omitted, it's assumed any date in past. If ToDate is omitted, it's assumed any date in future. 
+        </wsdl:documentation>
+      <wsdl:input message="tns:GetVipChangeLogSoapIn" />
+      <wsdl:output message="tns:GetVipChangeLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Returns cached status (max 30 seconds from the actual value) of the specified VIP, including nodes statuses.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            VIP_NOT_FOUND\ArgumentException -- VIP is not associated to any of the HLB devices managed by the system&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured&lt;br /&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetVIPStatusSoapIn" />
+      <wsdl:output message="tns:GetVIPStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIPNode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Enables VIP node and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:EnableVIPNodeSoapIn" />
+      <wsdl:output message="tns:EnableVIPNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIPNode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Disables VIP node and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:DisableVIPNodeSoapIn" />
+      <wsdl:output message="tns:DisableVIPNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Adds node to the VIP and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            VIP_RESTRICTED_OPERATION -- Add/Remove node operation is restricted for this VIP&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:AddNodeSoapIn" />
+      <wsdl:output message="tns:AddNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Removes node from VIP and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            VIP_RESTRICTED_OPERATION -- Add/Remove node operation is restricted for this VIP&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:RemoveNodeSoapIn" />
+      <wsdl:output message="tns:RemoveNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Enables VIP and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:EnableVIPSoapIn" />
+      <wsdl:output message="tns:EnableVIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Disables VIP and returns the current (not cached) status of the VIP.&lt;br /&gt;
+            throws following errorcodes:&lt;br /&gt;
+            ACCESS_DENIED\WRONG_USERNAME_FORMAT -- when username was supplied in the wrong format. As username is determined internally, this is a _server_ error&lt;br /&gt;
+            ACCESS_DENIED\NO_USER_GROUPS_FOUND -- user is not a member of any group in active directory&lt;br /&gt;
+            ACCESS_DENIED\MYVIPS_DOWN -- myVips is administratively down (at least one active 'ERROR' UserNotification exists in database)&lt;br /&gt;
+            NO_VIP_REGISTERED\ArgumentException -- VIP is not registered in the system.&lt;br /&gt;
+            ACCESS_DENIED\ArgumentException -- user is not authorized to manage given VIP&lt;br /&gt;
+            VIP_EXPIRED\ArgumentException -- VIP has a LifeCycle status LC_DELETE and needs to be renewed. 
+            VIP_ISLOCKED -- vip is locked by some other operation. Try later&lt;br /&gt;
+            WRONG_USERDATA\System.FormatException -- when invalid IP passed&lt;br /&gt;
+            INTERNAL_ERROR\&lt;exception object&gt; -- internal error occured</wsdl:documentation>
+      <wsdl:input message="tns:DisableVIPSoapIn" />
+      <wsdl:output message="tns:DisableVIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidVip">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Used in AddVIP form. Please note that the check on actual existance of VIP on HLB device is NOT performed.
+            This function does not require authorization.
+        </wsdl:documentation>
+      <wsdl:input message="tns:IsValidVipSoapIn" />
+      <wsdl:output message="tns:IsValidVipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSecurityGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Used in AddVIP form. Checks the SecurityGroup for validness. This function does not require authorization.
+        </wsdl:documentation>
+      <wsdl:input message="tns:IsValidSecurityGroupSoapIn" />
+      <wsdl:output message="tns:IsValidSecurityGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidMailAlias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Used in AddVIP form. Checks the SecurityGroup for validness. This function does not require authorization.
+        </wsdl:documentation>
+      <wsdl:input message="tns:IsValidMailAliasSoapIn" />
+      <wsdl:output message="tns:IsValidMailAliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVipRegistrationRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            Used in AddVIP form. Submits the request to register existing VIP in myVips.
+            Does not require authentication.
+        </wsdl:documentation>
+      <wsdl:input message="tns:SubmitVipRegistrationRequestSoapIn" />
+      <wsdl:output message="tns:SubmitVipRegistrationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_RenewLease">
+      <wsdl:input message="tns:Lifecycle_RenewLeaseSoapIn" />
+      <wsdl:output message="tns:Lifecycle_RenewLeaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_TerminateLease">
+      <wsdl:input message="tns:Lifecycle_TerminateLeaseSoapIn" />
+      <wsdl:output message="tns:Lifecycle_TerminateLeaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserHLBMgmtSvcSoap" type="tns:UserHLBMgmtSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUserSession">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RegisterUserSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveNotifications">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetActiveNotifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserFilters">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetAllUserFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserFilter">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/AddUserFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFilter">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RemoveUserFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerShellCheckModuleVersion">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/PowerShellCheckModuleVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPs">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVIPs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVipDescription">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/SetVipDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVipChangeLog">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVipChangeLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPStatus">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVIPStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIPNode">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/EnableVIPNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIPNode">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/DisableVIPNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/AddNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNode">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RemoveNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIP">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/EnableVIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIP">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/DisableVIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidVip">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidVip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSecurityGroup">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidMailAlias">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidMailAlias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVipRegistrationRequest">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/SubmitVipRegistrationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_RenewLease">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/Lifecycle_RenewLease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_TerminateLease">
+      <soap:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/Lifecycle_TerminateLease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserHLBMgmtSvcSoap12" type="tns:UserHLBMgmtSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUserSession">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RegisterUserSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveNotifications">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetActiveNotifications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserFilters">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetAllUserFilters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserFilter">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/AddUserFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFilter">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RemoveUserFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerShellCheckModuleVersion">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/PowerShellCheckModuleVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPs">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVIPs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVipDescription">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/SetVipDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVipChangeLog">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVipChangeLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVIPStatus">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/GetVIPStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIPNode">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/EnableVIPNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIPNode">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/DisableVIPNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/AddNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveNode">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/RemoveNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableVIP">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/EnableVIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableVIP">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/DisableVIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidVip">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidVip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSecurityGroup">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidMailAlias">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/IsValidMailAlias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVipRegistrationRequest">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/SubmitVipRegistrationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_RenewLease">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/Lifecycle_RenewLease" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lifecycle_TerminateLease">
+      <soap12:operation soapAction="http://myVips/myVipsEngine/UserHLBMgmtSvc.asmx/Lifecycle_TerminateLease" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserHLBMgmtSvc">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            &lt;h2&gt;myVips is a tool to manage Virtual IPs (VIPs) on Hardware Load Balancing devices (HLB)&lt;/h2&gt; 
+            &lt;h3&gt;Security model&lt;/h3&gt;</wsdl:documentation>
+    <wsdl:port name="UserHLBMgmtSvcSoap" binding="tns:UserHLBMgmtSvcSoap">
+      <soap:address location="http://myvips/myvipsengine/userhlbmgmtsvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserHLBMgmtSvcSoap12" binding="tns:UserHLBMgmtSvcSoap12">
+      <soap12:address location="http://myvips/myvipsengine/userhlbmgmtsvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PatchingUI.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Power Patch</title>
+    <link href="Styles/Site.css" rel="stylesheet" />
+    <link href="Styles/datepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="Styles/jquery.datetimepicker.css" />
+    <link href="Styles/NavigationMenu.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>    
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="30000"
+                    EnablePartialRendering="true" ScriptMode="Release">
+                </asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Power Patch
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="CurrentUserFullName" runat="server" Text="" CssClass="loginDisplay" />
+            </div>
+            <div id="" class="clear hideSkiplink">
+                <div class="menu" id="NavigationMenu">
+                    <ul id="tabs" class="level1">
+                        <li><a id="MenuTab1" runat="server" href="Plan.aspx">Plan</a></li>
+                        <li><a id="MenuTab2" runat="server" href="Prep.aspx">Prep</a></li>
+                        <li><a id="MenuTab3" runat="server" href="Execute.aspx">Execute</a></li>
+                        <li><a id="MenuTab4" runat="server" href="Validate.aspx">Validate</a></li>
+                        <li><a id="MenuTab5" runat="server" href="Reports.aspx">Reports</a></li>
+                        <li>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </li>
+                        <li>
+                      <iframe runat="server" id="iframeSrvcCheck" src="frmServiceErrorMessage.aspx" height="25px" width="500px" style="border-style:none; background-color: #1E90FF;" scrolling="no" frameborder="0"></iframe>
+                        </li>
+                    </ul>
+                </div>                
+                
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer" style="margin-bottom: 0.1in; margin-top: -0.35in; text-align: center">
+        <asp:Label ID="VersionNumber" runat="server" ForeColor="#333333"></asp:Label>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b627244d-9ac9-41c7-828c-4b5f73af5c82" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://TK3OrchSQL01.redmond.corp.microsoft.com:81/Orchestrator2012/Orchestrator.svc/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="fbd07a32-c38f-4fa2-9845-55072528f12c" SourceId="1" SourceUrl="http://TK3OrchSQL01.redmond.corp.microsoft.com:81/Orchestrator2012/Orchestrator.svc/" />
+  </Metadata>
+  <Extensions />
+</ReferenceGroup>

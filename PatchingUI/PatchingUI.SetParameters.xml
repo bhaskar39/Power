@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/PatchingUI_deploy" />
+  <setParameter name="Orchestrator_LoggingConnectionString-Web.config Connection String" value="Data Source=zenbox08;Initial Catalog=Orchestrator_Logging;Integrated Security=True" />
+  <setParameter name="TK5Orchestrator_ConnectionString-Web.config Connection String" value="Data Source=co1scopre1db01;Initial Catalog=Orchestrator_Logging;Integrated Security=True" />
+  <setParameter name="TK5SRV03Orchestrator_ConnectionString-Web.config Connection String" value="Data Source=tk5stosrv03;Initial Catalog=Orchestrator_Logging;Integrated Security=True" />
+  <setParameter name="ApplicationServices-Web.config Connection String" value="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true" />
+</parameters>
